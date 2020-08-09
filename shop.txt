@@ -1,0 +1,12 @@
+DROP TABLE IF EXISTS `shops`;
+CREATE TABLE `shops` (
+  `ShopsID` int(11) AUTO_INCREMENT NOT NULL PRIMARY KEY,
+  `ShopName` varchar(40) NOT NULL default '',
+  `Address` varchar(50),
+  `Phone` varchar(24) default NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO `shops` (ShopName, Address, Phone) VALUES 
+    ('炒飯店', '北屯區','(567) 123-4567'),
+    ('牛肉麵店', '西屯區','(789) 987-6543'),
+    ('平價牛排店', '南屯區','(456) 147-258369');
