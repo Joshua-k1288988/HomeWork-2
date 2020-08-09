@@ -2,7 +2,7 @@ DROP TABLE IF EXISTS `shops`;
 CREATE TABLE `shops` (
   `ShopsID` int(11) AUTO_INCREMENT NOT NULL PRIMARY KEY,
   `ShopName` varchar(40) NOT NULL default '',
-  `Address` varchar(50),
+  `Address` varchar(50) NOT NULL default '',
   `Phone` varchar(24) default NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 

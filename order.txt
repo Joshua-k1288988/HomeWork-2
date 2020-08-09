@@ -1,0 +1,29 @@
+DROP TABLE IF EXISTS `orders`;
+CREATE TABLE `orders` (
+  `OrderID` int(11) AUTO_INCREMENT NOT NULL PRIMARY KEY,
+  `ClientName` varchar(20) NOT NULL default '',
+  `ClientAddress` varchar(50) NOT NULL default '',
+  `ClientPhone` varchar(24) default NULL,
+  `ShopsID` int(11) default NULL,
+  `menuID` int(11) default NULL,
+  `menuName` varchar(40) NOT NULL default '',
+  `menucount` int(11),
+  `sumprice` int(15)
+
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+ALTER TABLE `orders`
+ADD FOREIGN KEY (ShopsID) REFERENCES `shops` (ShopsID),
+ADD FOREIGN KEY (menuID) REFERENCES `menu` (menuID);
+
+INSERT INTO `orders` 
+(`ClientName`,`ClientAddress`,`ClientPhone`,`ShopsID`,`menuID`,`menuName`,`menucount`,`sumprice`)VALUES
+    ('Leo','地址A','(01)23456789',1,1,'黃金炒飯',2,120),
+    ('Miko','地址b','(01)98765432',1,2,'咖哩炒飯',5,400),
+    ('Barry','地址c','(01)78923456',2,3,'紅燒牛肉湯麵',1,120),
+    ('Caman','地址d','(01)45678923',2,4,'牛肉乾麵',2,220),
+    ('Poto','地址e','(01)78945623',3,5,'厚片牛排',10,2000),
+    ('Temy','地址f','(01)45623789',3,6,'鐵板麵',4,320),
+    ('Qua','地址g','(01)65498732',1,2,'咖哩炒飯',4,320),
+    ('Mea','地址h','(01)23789456',2,4,'牛肉乾麵',1,110)
