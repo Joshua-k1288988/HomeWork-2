@@ -1,0 +1,2 @@
+CREATE DATABASE homework2 default character set utf8;
+USE homework2;
