@@ -1,3 +1,5 @@
+USE homework2;
+
 DROP TABLE IF EXISTS `orders`;
 CREATE TABLE `orders` (
   `OrderID` int(11) AUTO_INCREMENT NOT NULL PRIMARY KEY,
