@@ -1,0 +1,18 @@
+DROP TABLE IF EXISTS `menu`;
+CREATE TABLE `menu` (
+  `menuID` int(11) AUTO_INCREMENT NOT NULL PRIMARY KEY,
+  `menuName` varchar(40) NOT NULL default '',
+  `UnitPrice` decimal(19,4) default NULL,
+  `ShopsID` int(11) default NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+ALTER TABLE `menu`
+ADD FOREIGN KEY (ShopsID) REFERENCES `shops` (ShopsID);
+
+INSERT INTO `menu` (menuName, UnitPrice, ShopsID) VALUES 
+    ('黃金炒飯', '60', 1),
+    ('咖哩炒飯', '80', 1),
+    ('紅燒牛肉湯麵', '120', 2),
+    ('牛肉乾麵', '110', 2),
+    ('厚片牛排', '200', 3),
+    ('鐵板麵', '80', 3);
